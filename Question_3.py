@@ -1,8 +1,10 @@
 # Design an abstract class Shape with an abstract method area(). Then create two derived classes, Rectangle and Circle, 
 # that implement the area() method for calculating the area of a rectangle and a circle, respectively. 
 # Demonstrate the use of these classes by creating objects and calculating areas.
+from abc import ABC, abstractmethod
 import math 
 class Shape:
+    @abstractmethod
     def area(self):
         pass
 
@@ -13,7 +15,7 @@ class Rectangle(Shape):
 
     def area(self):
         Area = self.length * self.width
-        print(f"Area of Rectangle is: {Area}")
+        return print(f"Area of Rectangle is: {Area}")
 
 class Circle(Shape):
     def __init__(self, radius):
@@ -21,7 +23,7 @@ class Circle(Shape):
 
     def area(self):
         Area = math.pi * self.radius**2
-        print(f"Area of Circle is: {Area:.2f}")
+        return print(f"Area of Circle is: {Area:.2f}")
 
 cir1 = Circle(50)
 cir1.area()
